@@ -1,0 +1,194 @@
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Establece la altura mínima de la vista del dispositivo */
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón */
+
+.containerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #00EB89;
+    color: #000000;
+    border: none;
+    padding: 20px 40px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 18px;
+}
+
+button:active {
+    background-color: #e74c3c;
+}
+
+/* Estilos para etiquetas y texto */
+
+label, p, h1 {
+    color: #ffffff;
+}
+
+/* Estilos del fondo */
+
+body {
+    background-color: #333333;
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Estilos para el contenido principal */
+
+.contenedorCasa,
+.contenedorEdificio {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.datos {
+    width: 25%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el formulario de datos de la casa */
+
+.label-select-container {
+    flex: 1;
+    margin-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#GenerarCasa {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#imagenContainer {
+    text-align: center;
+}
+
+.custom-image {
+    max-width: 100%; /* Ajustar la imagen al ancho del contenedor */
+    max-height: 600px; /* Establecer una altura máxima para evitar que la imagen sea demasiado grande */
+    height: auto;
+    display: none;
+    padding-left: 10%;
+}
+
+/* Contenedor 2 */
+
+.contenedor2 {
+    width: 75%; /* Ajusta según sea necesario */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.datos1,
+.datos2 {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.datosParte1{
+    flex: 1;
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para pantallas más pequeñas, si es necesario */
+    .contenedorCasa {
+        flex-direction: column;
+    }
+    .datos,
+    .contenedor2 {
+        width: 50%;
+    }
+}
+
+.datosD {
+    width: 25%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+#GenerarButtonEdificio {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#imagenContainerD {
+    text-align: center;
+}
+
+.custom-imageD {
+    max-width: 100%; /* Ajustar la imagen al ancho del contenedor */
+    max-height: 600px; /* Establecer una altura máxima para evitar que la imagen sea demasiado grande */
+    height: auto;
+    display: none;
+    padding-left: 10%;
+}
+
+/* Contenedor 2 */
+
+.contenedorD2 {
+    width: 75%; /* Ajusta según sea necesario */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.datosD1,
+.datosD2 {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.datosParteD1 {
+    flex: 1;
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para pantallas más pequeñas, si es necesario */
+    .contenedorEdificio {
+        flex-direction: column;
+    }
+    .datosD,
+    .contenedorD2 {
+        width: 50%;
+    }
+}
+/* Estilos para la imagen del plano */
+
+
+
+

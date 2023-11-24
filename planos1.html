@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simulador de Planos</title>
+    <link rel="stylesheet"type ="text/css" href="planos1.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/pdf-lib@3.22.0/dist/pdf-lib.js"></script> -->
+</head>
+
+<body>
+    <div class="containerButton">
+        <button id="unifamiliarButton" >Casa</button> 
+        <button id="edificacionButton">Edificio</button>
+    </div>
+    
+    <div class="contenedorCasa" id="casaContainer">
+        <div class="datos">
+            <div class="datos1" id="parte1">
+                <div class="datosParte1">
+                    <label for="pisos">Número de pisos::</label>
+                    <select id="pisos" >
+                        <option value="SO"selected>Selecionar una Opcion</option>
+                        <option value="1">1</option>
+                        <option value="2">2 (No disponible)</option>
+                        <option value="3">3 (No disponible)</option>
+                    </select>
+                    <label for="ancho">Ancho:</label>
+                    <select id="ancho" onchange="actualizarOpcionesCasa()">
+                        <option value="SO" selected>Selecionar una Opcion</option>
+                            <option value="6.5">6.5 metros(No disponible)</option>
+                            <option value="7.5">7.5 metros(No disponible)</option>
+                            <option value="8.5">8.5 metros(No disponible)</option>
+                            <option value="9.22">9.22 metros</option>
+                            <option value="10.5">10.5 metros(No disponible)</option>
+                    </select>
+                    <label for="largo">Largo:</label>
+                    <select id="largo" >
+                        <option value="SO" selected>Seleccionar una Opción</option>
+                    </select>
+                    <label for="escalera">Posición de la Escalera:</label>
+                    <select id="escalera" >
+                        <option value="SO" selected>Seleccionar una Opción</option>
+                    </select>
+                </div>
+                <button id="GenerarCasa" >Mostrar más opciones</button>
+            </div>
+        
+            <div class="datos2" id="unifamiliarContent">
+                <label>Número de Cuartos:</label>
+                <select id="cuartos">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label>Número de Baños:</label>
+                <select id="banos">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2 1/2</option>
+                    <option value="3">3</option>
+                </select>
+                <label>Sala:</label>
+                <select id="sala">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+
+                <label>Comedor:</label>
+                <select id="comedor">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+
+                <label>Cocina:</label>
+                <select id="cocina">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+                <label>Lavandería:</label>
+                <select id="lavanderia">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+                <label>Garaje:</label>
+                <select id="garaje">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+                <label>Terraza:</label>
+                <select id="terraza">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+                <button onclick="mostrarImagen()">Generar Plano </button>
+            </div>
+        </div>
+
+        <div class="contenedor2" id="plano1">
+            <div id="imagenContainer">
+                <img id="imagen" class="custom-image" style="display: none;">
+            </div>
+            <!-- <button id="descargarButton" onclick="descargarPDF()" style="display: none;">Descargar en PDF</button>  -->
+        </div>
+    </div>
+
+
+    <div class="contenedorEdificio" id="edificioContainer">
+        <div class="datosD">
+            <div class="datosD1" id="edificacion">
+                <div class="datosParteD1">
+                    <label>Numero de pisos del edificio</label>
+                    <select name=edificio id="edificio" >
+                        <option value="SO"selected>Selecionar una Opcion</option>
+                        <option value="1">1</option>
+                        <option value="2">2 (No disponible)</option>
+                        <option value="3">3 (No disponible)</option>
+                        <option value="4">4 (No disponible)</option>
+                    </select>
+                    <label>Tipo de construccíon</label>
+                    <select name=tipo id="tipo">
+                        <option value="SO" selected>Seleccionar una Opcion</option>
+                        <option value="tipo_1">Vivienda</option>
+                        <option value="tipo_2">Comercio (No disponible)</option>
+                        <option value="tipo_3">Vivienda + Comercio (No disponible)</option>
+                    </select>
+                    <label for="ancho22" onchange="actualizarOpciones()">Ancho:</label>
+                    <select id="ancho22">
+                        <option value="SO" selected>Selecionar una Opcion</option>
+                        <option value="6">6 metros</option>
+                        <option value="7">7 metros</option>
+                        <option value="8">8 metros</option>
+                    </select>
+                    <label for="largo22">Largo:</label>
+                    <select id="largo22">
+                        <!-- Opciones iniciales para Ancho de 6 metros -->
+                        <option value="SO" selected>Selecionar una Opcion</option>
+                        <option value="17">17 metros</option>
+                        <!-- <option value="15">15 metros</option>
+                        <option value="18">16 metros</option> -->
+                    </select>
+
+                    <label>Posición de la escalera :</label>
+                    <select id="escalera22"><br>
+                        <option value="SO" selected>Selecionar una Opcion</option>
+                        <option value="1">Adelante</option>
+                        <option value="2">Medio</option>
+                        <option value="3">Fondo</option>
+                    </select>
+                </div>
+                <button id="GenerarButtonEdificio">Mostrar mas Opciones</button>
+            </div>
+
+            <div class="datosD2" id="multifamiliarContent">
+                <label>Número de Cuartos:</label>
+                <select id="cuartos22">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <label>Terraza:</label>
+                <select id="terraza22">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+
+                <label>Número de Baños:</label>
+                <select id="banos22">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2 1/2</option>
+                    <option value="3">3</option>
+                </select>
+
+                <label>Sala:</label>
+                <select id="sala22">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+
+                <label>Comedor:</label>
+                <select id="comedor22">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+
+                <label>Cocina:</label>
+                <select id="cocina22">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+
+                <label>Lavandería:</label>
+                <select id="lavanderia22">
+                    <option value="Si">Sí</option>
+                    <!-- <option value="no">No</option> -->
+                </select>
+                <button onclick="mostrarImagen2()">Generar Plano </button>
+            </div>
+        </div>
+        <div class="contenedorD2" id="plano2">
+            <div id="imagenContainerD">
+                <img id="imagen2" class="custom-imageD" style="display: none;">
+            </div>
+            <div>
+                <!-- <button id="descargarButton2" onclick="descargarPDF2()" style="display: none;">Descargar en PDF</button> -->
+                <!-- <button onclick="pasarelaPagos()">ACCEDER A PAQUETE COMPLETO</button> -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="planos1.js"></script>
+</html>
